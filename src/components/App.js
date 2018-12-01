@@ -19,9 +19,14 @@ class App extends Component {
             ['-', '-', '-'],
             ['-', '-', '-']
         ]
-      }
+      };
+      this.appClick = this.appClick.bind(this);
   }
 
+  //When done
+  appClick(columnIndex, rowIndex){
+      console.log({columnIndex} + console.log({rowIndex}))
+  }
 
   render() {
 
