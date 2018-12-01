@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import '../assets/style/index.css';
 
 import Header from './Header.js';
 import Board from './Board.js';
@@ -25,13 +25,11 @@ class App extends Component {
 
   render() {
 
-      let text = "Turn of "+ this.state.turn;
-
     return (
 
       <div>
         <h1> Tic Tac Toe </h1>
-        <Header text={text} />
+        <Header turn={this.state.turn} />
         <Board values={this.state.values}/>
       </div>
     );
