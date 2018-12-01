@@ -2,24 +2,44 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const PLAYERX = "Player 1 - Xs";
+const PLAYER0 = "Player 2 - Xs";
+
 class App extends Component {
+  constructor(props){
+      super(props);
+      this.state = {
+        turn: PLAYERX,
+        values: [
+            ['-', '-', '-'],
+            ['-', '-', '-'],
+            ['-', '-', '-']
+        ]
+      }
+  }
+
   render() {
+
+      let text = "Turn of "+ this.state.turn;
+
+      // It is create a board object
+      let board = this.state.values.map((rowValues, rowIndex)=>{
+         //rowValues = ['-', '-', '-']; it is assigned these spans to the row
+          let row = rowValues.map((value, columnIndex)=>{
+              // It is represent each value in a span
+              return (<span> {value} </span>)
+          });
+          return (<div>{row} </div>)
+      });
+
+
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+      <div>
+        <h1> Tic Tac Toe </h1>
+        <header> {text}  </header>
+          {board}
       </div>
     );
   }
