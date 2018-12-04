@@ -35,7 +35,7 @@ class App extends Component {
       <div>
         <h1> Tic Tac Toe </h1>
         <Header turn={this.state.turn} />
-        <Board values={this.state.values}/>
+        <Board values={this.state.values} appClick={this.appClick}/>
       </div>
     );
   }

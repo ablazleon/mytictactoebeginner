@@ -1,7 +1,7 @@
 import React from 'react'
 import Square from "./Square";
 
-export default class Header extends React.Component{
+export default class Board extends React.Component{
 
     // Props are created from its super
     constructor(props){

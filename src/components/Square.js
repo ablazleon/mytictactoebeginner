@@ -5,7 +5,7 @@ const squareStyle = {
     width: "100px"
 }
 
-export default class Header extends React.Component{
+export default class Square extends React.Component{
 
     // Props are created from its super
     constructor(props){
@@ -14,12 +14,12 @@ export default class Header extends React.Component{
     }
 
     // Needs information from its father
-    squareClick(columnIndex, rowIndex){
-        this.props.boardClick(columnIndex, rowIndex);
+    squareClick(){
+        this.props.boardClick();
     }
 
     render(){
-        return (<button onClick={this.squareClick(this.props.columnIndex, this.props.rowIndex)}
+        return (<button onClick={this.squareClick()}
          style={squareStyle}> {this.props.value} </button>);
     }
 }
