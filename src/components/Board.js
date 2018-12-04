@@ -9,8 +9,8 @@ export default class Board extends React.Component{
         this.boardClick = this.boardClick.bind(this);
     }
 
-    boardClick(columnIndex, rowIndex){
-        this.props.appClick(columnIndex, rowIndex)
+    boardClick(rowIndex, columnIndex){
+        this.props.appClick(rowIndex, columnIndex)
     }
 
     // Iterate over the values state

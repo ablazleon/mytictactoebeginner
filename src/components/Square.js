@@ -15,11 +15,12 @@ export default class Square extends React.Component{
 
     // Needs information from its father
     squareClick(){
-        this.props.boardClick();
+        this.props.boardClick(this.props.columnIndex, this.props.rowIndex);
     }
 
     render(){
-        return (<button onClick={this.squareClick()}
+
+        return (<button onClick={this.squareClick}
          style={squareStyle}> {this.props.value} </button>);
     }
 }

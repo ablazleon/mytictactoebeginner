@@ -24,14 +24,15 @@ class App extends Component {
   }
 
   //When done
-  appClick(columnIndex, rowIndex){
-      console.log({columnIndex} + console.log({rowIndex}))
+  appClick(rowIndex, columnIndex){
+      console.log({columnIndex})
+      console.log({rowIndex})
+      // Get the copy and set it
   }
 
   render() {
 
     return (
-
       <div>
         <h1> Tic Tac Toe </h1>
         <Header turn={this.state.turn} />
