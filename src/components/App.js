@@ -27,6 +27,14 @@ class App extends Component {
   appClick(rowIndex, columnIndex){
       console.log({columnIndex})
       console.log({rowIndex})
+      let valuesCopy = JSON.parse(JSON.stringify(this.state.values));
+      let newMovement = this.state.turn === PLAYERX ? 'X' : '0';
+      valuesCopy[columnIndex][rowIndex] = newMovement;
+      this.setState({
+          turn: this.state.turn === PLAYERX ? PLAYER0 : PLAYERX, // Turn change
+          values: valuesCopy
+      })
+
       // Get the copy and set it
   }
 
