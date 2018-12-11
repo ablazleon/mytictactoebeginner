@@ -9,33 +9,17 @@ import '../assets/style/index.css';
 import Header from './Header.js';
 import Board from './Board.js';
 
+import { connect } from 'react-redux'
+import {playPosition} from "../reducers/actions";
+
 class App extends Component {
   constructor(props){
       super(props);
-      this.state = {
-        turn: PLAYERX,
-        values: [
-            ['-', '-', '-'],
-            ['-', '-', '-'],
-            ['-', '-', '-']
-        ]
-      };
-      this.appClick = this.appClick.bind(this);
   }
 
   //When done
   appClick(rowIndex, columnIndex){
-      console.log({columnIndex})
-      console.log({rowIndex})
-      let valuesCopy = JSON.parse(JSON.stringify(this.state.values));
-      let newMovement = this.state.turn === PLAYERX ? 'X' : '0';
-      valuesCopy[rowIndex][columnIndex] = newMovement;
-      this.setState({
-          turn: this.state.turn === PLAYERX ? PLAYER0 : PLAYERX, // Turn change
-          values: valuesCopy
-      })
-
-      // Get the copy and set it
+      this.props.dispatch(playPosition(rowIndex, columnIndex, this.props.turn));
   }
 
   render() {
@@ -43,11 +27,18 @@ class App extends Component {
     return (
       <div>
         <h1> Tic Tac Toe </h1>
-        <Header turn={this.state.turn} />
-        <Board values={this.state.values} appClick={this.appClick}/>
+        <Header turn={this.props.turn} />
+        <Board values={this.props.values} appClick={this.appClick}/>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state){
+    return{
+        turn: state.turn,
+        values: state.values
+    };
+}
+
+export default connect(mapStateToProps)(App);

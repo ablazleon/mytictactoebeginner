@@ -1,8 +1,9 @@
 import { Provider } from 'react-redux';
 import GlobalState from '../reducers/reducers.js';
 import { createStore } from 'redux';
-import React from 'react';
+import React, {component} from 'react';
 import App from './App';
+
 import {PLAYER0, PLAYERX, VALUES} from "../constants/constants";
 
 export default class ReduxProvider extends React.Component {
