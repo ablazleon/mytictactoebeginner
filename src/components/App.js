@@ -15,6 +15,7 @@ import {playPosition} from "../reducers/actions";
 class App extends Component {
   constructor(props){
       super(props);
+      this.appClick = this.appClick.bind(this);
   }
 
   //When done

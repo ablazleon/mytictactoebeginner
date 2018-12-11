@@ -5,7 +5,8 @@ import {PLAYERX, PLAYER0} from "../constants/constants";
 function turnReducer(state=PLAYERX, action){ // Starts PLAYERX
     switch(action.type){
         case 'PLAY_POSITION':
-            return action.turn === PLAYERX ? PLAYERX : PLAYER0;
+            // Si player X, cambia
+            return action.turn === PLAYERX ? PLAYER0 : PLAYERX;
         default:
             return state;
     }
