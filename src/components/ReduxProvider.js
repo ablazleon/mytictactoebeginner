@@ -1,19 +1,16 @@
 import { Provider } from 'react-redux';
-import GlobalState from './reducers';
+import GlobalState from './reducers.js';
 import { createStore } from 'redux';
 import React from 'react';
 import App from './App';
+import {PLAYER0, PLAYERX, VALUES} from "../constants/constants";
 
 export default class ReduxProvider extends React.Component {
     constructor(props){
         super(props);
         this.initialState = {
-            score: 0,
-            finished: false,
-            currentQuestion: 0,
-            questions: [
-
-            ]
+            turn: PLAYERX,
+            values: VALUES
         };
         this.store = this.configureStore();
     }
@@ -22,7 +19,7 @@ export default class ReduxProvider extends React.Component {
 
         return(
             <Provider store = { this.store }>
-                <div style = {( height: '100%')}>
+                <div>
                     <App store = { this.store }/>
                 </div>
             </Provider>
