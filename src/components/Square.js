@@ -15,7 +15,7 @@ export default class Square extends React.Component{
 
     // Needs information from its father
     squareClick(){
-        this.props.boardClick(this.props.columnIndex, this.props.rowIndex);
+        this.props.boardClick(this.props.rowIndex, this.props.columnIndex);
     }
 
     render(){

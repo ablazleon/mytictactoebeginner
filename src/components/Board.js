@@ -17,7 +17,7 @@ export default class Board extends React.Component{
     render(){
         // It is create a board object
         let board = this.props.values.map((rowValues, rowIndex)=>{
-            //rowValues = ['-', '-', '-']; it is assigned these spans to the row
+            //rowValues = ['-', '-', '-']; it is a  ssigned these spans to the row
             let row = rowValues.map((value, columnIndex)=>{
                 // It is represent each value in a span
                 return (<Square boardClick={this.boardClick}
