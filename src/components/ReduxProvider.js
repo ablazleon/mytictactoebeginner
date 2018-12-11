@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import GlobalState from './reducers.js';
+import GlobalState from '../reducers/reducers.js';
 import { createStore } from 'redux';
 import React from 'react';
 import App from './App';
