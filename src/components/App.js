@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
+// Import initial state
+import PlayerX from '../constans';
+
 import '../assets/style/index.css';
 
 import Header from './Header.js';
 import Board from './Board.js';
-
-
-const PLAYERX = "Player 1 - Xs";
-const PLAYER0 = "Player 2 - Xs";
 
 class App extends Component {
   constructor(props){

@@ -1,7 +1,6 @@
 import { Provider } from 'react-redux';
 import GlobalState from './reducers';
 import { createStore } from 'redux';
-
 import React from 'react';
 import App from './App';
 
