@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 // Import initial state
-import PlayerX from '../constans';
+import PLAYERX from '../constants/constants.js';
+import PLAYER0 from '../constants/constants.js';
 
 import '../assets/style/index.css';
 
